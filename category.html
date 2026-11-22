@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Category | The Arena Report</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topline">
+<div class="wrap">News · Analysis · Opinions · Stories that matter</div>
+</div>
+
+<header>
+<div class="wrap head">
+<div>
+<a class="brand" href="index.html">THE ARENA<span> REPORT</span></a>
+<div class="tag">EVERY GAME. EVERY STORY.</div>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#latest">Latest</a>
+<a href="index.html#sports">Sports</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+
+<main class="wrap">
+<div class="section-head">
+<h2 id="category-title">Sports</h2>
+<span>EXPLORE THE ARENA</span>
+</div>
+
+<section class="cards" id="category-stories"></section>
+
+<p id="empty-message" style="display:none; padding:25px 0;">
+There are no articles in this category yet. Check back soon.
+</p>
+
+<p style="margin-top:30px;">
+<a class="btn" href="index.html">Back to Home</a>
+</p>
+</main>
+
+<footer>
+<div class="wrap foot">
+<span>© 2026 The Arena Report · Aderemi Femi</span>
+<span>EVERY GAME. EVERY STORY.</span>
+</div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+const category = new URLSearchParams(window.location.search).get('category') || 'Sports';
+
+document.getElementById('category-title').textContent = category;
+document.title = category + ' | The Arena Report';
+
+loadArticles().then(articles => {
+const matching = articles.filter(article =>
+(article.category || '').toLowerCase() === category.toLowerCase()
+);
+
+document.getElementById('category-stories').innerHTML =
+matching.map(card).join('');
+
+if (matching.length === 0) {
+document.getElementById('empty-message').style.display = 'block';
+}
+});
+</script>
+
+</body>
+</html>
