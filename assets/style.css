@@ -43,3 +43,8 @@
 .card-copy {
   padding: 22px;
 }
+
+/* RESPONSIVE ARTICLE GRID */
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
