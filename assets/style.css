@@ -48,3 +48,76 @@
 .cards {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
+
+
+/* SPORTS CATEGORY BANNER */
+
+.category-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 145px;
+  padding: 25px 30px;
+  overflow: hidden;
+  border-radius: 6px;
+  border-bottom: 4px solid var(--red);
+  background:
+    radial-gradient(ellipse at 85% 20%, rgba(255,255,255,.22), transparent 12%),
+    radial-gradient(ellipse at 75% 80%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(110deg, #080f20 0%, #14233d 65%, #263c5b 100%);
+  color: white;
+  margin: 35px 0 22px;
+}
+
+.category-icon {
+  font-size: 65px;
+  line-height: 1;
+  padding-right: 25px;
+  margin-right: 25px;
+  border-right: 5px solid var(--red);
+}
+
+.category-banner-title h2 {
+  color: white;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.category-banner-title span {
+  color: #d6deeb;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.category-banner-accent {
+  position: absolute;
+  right: 18%;
+  top: -30px;
+  width: 55px;
+  height: 210px;
+  background: var(--red);
+  transform: skewX(-25deg);
+  opacity: .9;
+}
+
+@media (max-width: 600px) {
+  .category-banner {
+    padding: 20px 15px;
+    min-height: 110px;
+  }
+
+  .category-icon {
+    font-size: 42px;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+
+  .category-banner-title span {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
